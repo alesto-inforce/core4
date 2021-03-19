@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="AllTests" parallel="classes" thread-count="1">
+
+    <listeners>
+        <listener class-name="tests.listeners.AllureTestNGListener"/>
+    </listeners>
+
+    <test name="AllTests">
+        <!-- Change the value of ENV parameter to change the environment ex. STG or QA -->
+        <!-- Change the value of BROWSER parameter to change the browser ex. "CHROME" or "FIREFOX" -->
+        <!-- Change the value of WAIT_TIME parameter to increase or decrease waiting time for elements -->
+        <parameter name="WAIT_TIME" value="90"/>
+        <parameter name="ENV" value="STG"/>
+        <parameter name="BROWSER" value="CHROME"/>
+        <classes>
+            <class name="tests.runners.TestNGCucumberRunner"/>
+        </classes>
+    </test>
+
+</suite>
